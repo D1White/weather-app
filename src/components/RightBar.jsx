@@ -32,13 +32,13 @@ function RightBar() {
         </div>
 
         <div className="right-bar__weather">
-          <WeatherBlock />
-          <WeatherBlock />
-          <WeatherBlock />
-          <WeatherBlock />
-          <WeatherBlock />
-          <WeatherBlock />
-          <WeatherBlock />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
+          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
         </div>
 
         <div className="right-bar__highlights">
