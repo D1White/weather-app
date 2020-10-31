@@ -1,10 +1,11 @@
-
+import { LeftBar, RightBar } from "./components";
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <main>
+      <LeftBar />
+      <RightBar />
+    </main>
   );
 }
 
