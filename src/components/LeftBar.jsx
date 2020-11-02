@@ -9,7 +9,7 @@ import radioFilled from "../assets/img/radio_filled.svg";
 
 import { weatherImg } from '../utils/weatherImg';
 
-const dayOfWeekArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const dayOfWeekArr = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 
 function LeftBar() {
@@ -63,7 +63,7 @@ function LeftBar() {
             </div>
             <div className="left-bar__info__date">
               <span className="date__dayOfWeek">{`${dayOfWeekArr[date.getDay()]},`}</span>
-              <span className="date__time">{`${date.getHours()}:${date.getMinutes()}`}</span>
+              <span className="date__time">{date.toTimeString().slice(0,5)}</span>
             </div>
           </div>
 

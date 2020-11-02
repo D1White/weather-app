@@ -1,43 +1,22 @@
 import React from "react";
 
-import MapExample from "../assets/img/MapExample.png";
-
 import {
-  WeatherBlock,
+  RightBarWeather,
   UVIndex,
   WindStatus,
   SunriseSunset,
   Humidity,
   Visibility,
   MinMaxTemp,
-  UnitsEllipse,
+  Map
 } from "./";
 
 function RightBar() {
   return (
     <div className="right-bar">
       <div className="right-bar__container">
-        <div className="right-bar__header">
-          <div className="right-bar__header__interval">
-            <span className="interval__text">Today</span>
-            <span className="interval__text active">Week</span>
-          </div>
-          <div className="right-bar__header__scale">
-            <UnitsEllipse unit='C' />
-            <UnitsEllipse unit='F' />
-          </div>
-        </div>
-
-        <div className="right-bar__weather">
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-          <WeatherBlock dayofWeek='Mon' tempMin={3} tempMax={12} />
-        </div>
-
+        <RightBarWeather />
+          
         <div className="right-bar__highlights">
           <h3 className="highlights__title">Today’s Highlights</h3>
 
@@ -54,7 +33,7 @@ function RightBar() {
                 <MinMaxTemp />
               </div>
             </div>
-            <img src={MapExample} alt="map" className="highlights__map" />
+            <Map />
           </div>
         </div>
       </div>
