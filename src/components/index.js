@@ -6,4 +6,5 @@ export {default as WindStatus} from './WindStatus';
 export {default as SunriseSunset} from './SunriseSunset';
 export {default as Humidity} from './Humidity';
 export {default as Visibility} from './Visibility';
-export {default as AirQuality} from './AirQuality';
+export {default as MinMaxTemp} from './MinMaxTemp';
+export {default as UnitsEllipse} from './UnitsEllipse';

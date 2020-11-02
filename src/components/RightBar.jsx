@@ -9,7 +9,8 @@ import {
   SunriseSunset,
   Humidity,
   Visibility,
-  AirQuality,
+  MinMaxTemp,
+  UnitsEllipse,
 } from "./";
 
 function RightBar() {
@@ -22,12 +23,8 @@ function RightBar() {
             <span className="interval__text active">Week</span>
           </div>
           <div className="right-bar__header__scale">
-            <div className="scale__elipse active">
-              <div className="scale__elipse__text active">°C</div>
-            </div>
-            <div className="scale__elipse">
-              <div className="scale__elipse__text">°F</div>
-            </div>
+            <UnitsEllipse unit='C' />
+            <UnitsEllipse unit='F' />
           </div>
         </div>
 
@@ -54,7 +51,7 @@ function RightBar() {
               <div className="highlights__row">
                 <Humidity />
                 <Visibility />
-                <AirQuality />
+                <MinMaxTemp />
               </div>
             </div>
             <img src={MapExample} alt="map" className="highlights__map" />
