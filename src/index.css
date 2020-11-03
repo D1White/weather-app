@@ -745,7 +745,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 1290px) and (max-width: 1609px){
+@media only screen and (min-width: 1385px) and (max-width: 1609px){
   .right-bar__container {
     max-width: 750px;
   }
@@ -769,7 +769,7 @@ main {
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width: 1050px) and (max-width: 1289px) {
+@media only screen and (min-width: 1050px) and (max-width: 1384px) {
   .right-bar__container {
     width: 100%;
     padding: 0 30px;
@@ -821,6 +821,10 @@ main {
 
   .left-bar {
     width: 100%;
+  }
+
+  .left-bar__footer {
+    margin-bottom: 30px;
   }
 
   .right-bar {
@@ -876,11 +880,12 @@ main {
 
   .highlights__map {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 575px) {
+@media only screen and (min-width: 340px) and (max-width: 575px) {
   main {
     flex-direction: column;
   }
@@ -897,6 +902,10 @@ main {
   .left-bar__img {
     width: 300px;
     height: 250px;
+  }
+
+  .left-bar__footer {
+    margin-bottom: 30px;
   }
 
   .right-bar {
@@ -935,7 +944,91 @@ main {
   }
 
   .weather__component {
-    margin-left: 40px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .highlights__row {
+    flex-direction: column;
+  }
+
+  .highlights__component {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .highlights__component:first-child {
+    margin-top: 0;
+  }
+
+  .highlights__map {
+    margin-top: 30px;
+    width: 260px;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 339px) {
+  main {
+    flex-direction: column;
+  }
+
+  .left-bar {
+    width: 100%;
+  }
+
+  .left-bar__container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .left-bar__img {
+    width: 200px;
+    height: 150px;
+  }
+
+  .left-bar__footer {
+    margin-bottom: 30px;
+  }
+
+  .right-bar {
+    width: 100%;
+  }
+
+  .right-bar__header {
+    flex-direction: column;
+  }
+
+  .right-bar__header__scale {
+    margin-top: 30px;
+  }
+
+  .right-bar__weather {
+    margin-top: 30px;
+  }
+
+  .right-bar__container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .right-bar__highlights {
+    align-items: center;
+  }
+
+  .highlights__main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .right-bar__weather {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather__component {
     margin-top: 30px;
   }
 
@@ -954,7 +1047,12 @@ main {
 
   .highlights__map {
     margin-top: 30px;
-    width: 230px;
-    height: 242px;
+    width: 260px;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+
+  .popup {
+    left: 0;
   }
 }

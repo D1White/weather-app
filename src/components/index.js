@@ -10,4 +10,4 @@ export {default as MinMaxTemp} from './MinMaxTemp';
 export {default as UnitsEllipse} from './UnitsEllipse';
 export {default as Popup} from './Popup';
 export {default as RightBarWeather} from './RightBarWeather';
-export {default as Map} from './Map';
+export {default as WeatherMap} from './WeatherMap';

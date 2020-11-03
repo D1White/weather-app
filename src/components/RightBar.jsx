@@ -8,7 +8,7 @@ import {
   Humidity,
   Visibility,
   MinMaxTemp,
-  Map
+  WeatherMap
 } from "./";
 
 function RightBar() {
@@ -33,7 +33,7 @@ function RightBar() {
                 <MinMaxTemp />
               </div>
             </div>
-            <Map />
+            <WeatherMap />
           </div>
         </div>
       </div>
