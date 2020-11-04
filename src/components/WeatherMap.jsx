@@ -1,15 +1,24 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { MapContainer, TileLayer } from "react-leaflet";
 
 function WeatherMap() {
   const geolocation = useSelector(({ location }) => location.geolocation);
+
+  const [loc, setLoc] = useState([])
+  
+  useEffect(() => {
+    if (geolocation.loc) {
+      setLoc(geolocation.loc.split(','));
+    }
+  }, [geolocation])
+
   return (
     <div>
-      {geolocation.longitude && (     
+      {loc.length > 1 && (     
         <MapContainer
-          center={[geolocation.latitude, geolocation.longitude]}
+          center={[loc[0], loc[1]]}
           zoom={11}
           scrollWheelZoom={false}
           className="highlights__map"
@@ -20,7 +29,7 @@ function WeatherMap() {
           />
           <TileLayer
             attribution='<a href="https://openweathermap.org/">Openweathermap</a>'
-            url="https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=68e0afb55f84682ae49f209717878748"
+            url="https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=68e0afb55f84682ae49f209717878748"
           />
         </MapContainer>
       )}

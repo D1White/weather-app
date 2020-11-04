@@ -59,7 +59,7 @@ function LeftBar() {
               <span className="degrees__scale">{activeUnit}</span>
             </div>
             <div className="left-bar__info__region">
-              <span className="region__text">{`${location.city}, ${location.country_name}`}</span>
+              <span className="region__text">{`${location.city}, ${location.country}`}</span>
             </div>
             <div className="left-bar__info__date">
               <span className="date__dayOfWeek">{`${dayOfWeekArr[date.getDay()]},`}</span>

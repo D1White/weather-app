@@ -8,18 +8,18 @@ function App() {
   const dispatch = useDispatch();
 
   const [popupVisible, setPopupvisible] = useState(false);
-  const [geolocCorrect, setGeolocCorrect] = useState(false);
+  // const [geolocCorrect, setGeolocCorrect] = useState(false);
 
   useEffect(() => {
     dispatch(fetchLocation());
-
-    if (localStorage.getItem("geolocation") && !geolocCorrect) {
+    if (localStorage.getItem("geolocation") && !localStorage.getItem('geolocationIsCorrect')) {
       setPopupvisible(true);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const popupConfirmBtn = () => {
-    setGeolocCorrect(true);
+    // setGeolocCorrect(true);
+    localStorage.setItem('geolocationIsCorrect', true);
     setPopupvisible(false);
   };
   const popupCancelmBtn = () => {

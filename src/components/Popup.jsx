@@ -11,7 +11,7 @@ function Popup({ visible, popupConfirmBtn, popupCancelmBtn, geolocation }) {
         <img src={locationIco} alt="location" />
         { geolocation && (
           <span className="popup__text">
-            Is your current location <b>{geolocation.city}</b>, <b>{geolocation.country_name}</b>?
+            Is your current location <b>{geolocation.city}</b>, <b>{geolocation.country}</b>?
           </span>
         )}
       </div>

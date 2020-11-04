@@ -12,13 +12,15 @@ export const fetchLocation = () => (dispatch) => {
   if (localStorage.getItem('geolocation')) {
     const obj = JSON.parse(localStorage.getItem('geolocation'));
     dispatch(setGeolocation(obj));
-    dispatch(fetchWeather(obj.latitude, obj.longitude));
+    const loc = obj.loc.split(',');
+    dispatch(fetchWeather(loc[0], loc[1]));
   }else {
     axios.get('http://api.ipify.org/?format=json').then(({data}) => {
-      axios.get(`http://api.ipapi.com/${data.ip}?access_key=e066403b0eab7de6d71255fc4a6d398c`).then(({data}) => {
+      axios.get(`http://ipinfo.io/${data.ip}?token=0e931f7f1a875c`).then(({data}) => {
         dispatch(setGeolocation(data));
         localStorage.setItem('geolocation', JSON.stringify(data));
-        dispatch(fetchWeather(data.latitude, data.longitude));
+        const loc = data.loc.split(',');
+        dispatch(fetchWeather(loc[0], loc[1]));
       })
     })
   }
