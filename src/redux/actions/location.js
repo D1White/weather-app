@@ -15,8 +15,8 @@ export const fetchLocation = () => (dispatch) => {
     const loc = obj.loc.split(',');
     dispatch(fetchWeather(loc[0], loc[1]));
   }else {
-    axios.get('http://api.ipify.org/?format=json').then(({data}) => {
-      axios.get(`http://ipinfo.io/${data.ip}?token=0e931f7f1a875c`).then(({data}) => {
+    axios.get('https://api.ipify.org/?format=json').then(({data}) => {
+      axios.get(`https://ipinfo.io/${data.ip}?token=0e931f7f1a875c`).then(({data}) => {
         dispatch(setGeolocation(data));
         localStorage.setItem('geolocation', JSON.stringify(data));
         const loc = data.loc.split(',');
