@@ -8,7 +8,7 @@ import {
   Humidity,
   Visibility,
   MinMaxTemp,
-  WeatherMap
+  WeatherMap,
 } from "./";
 
 function RightBar() {
