@@ -11,3 +11,4 @@ export {default as UnitsEllipse} from './UnitsEllipse';
 export {default as Popup} from './Popup';
 export {default as RightBarWeather} from './RightBarWeather';
 export {default as WeatherMap} from './WeatherMap';
+export {default as LeftBarHeader} from './LeftBarHeader';

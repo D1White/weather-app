@@ -113,6 +113,44 @@ main {
   outline: none;
 }
 
+.header-search__data {
+  min-width: 200px;
+  position: absolute;
+  top: 115px;
+  left: 40px;
+  background-color: #F3F3F3;
+  border-radius: 20px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-search__data-value {
+  font-size: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.header-search__data-value:first-child {
+  margin-top: 0;
+}
+.header-search__data-value:hover {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.header-search__data-value>b {
+  font-weight: 500;
+}
+.header-search__data-value>hr {
+  margin: 5px 0 0 0;
+}
+.header-search__data-value>hr:last-child{
+  opacity: 0;
+  margin: 0;
+}
+
 .left-bar__header-button {
   width: 44px;
   height: 44px;
@@ -342,40 +380,40 @@ main {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: relative;
-  z-index: -1;
 }
 
 .weather-transition-appear {
-  transform: translateX(-110%);
+  transform: scale(0);
 }
 .weather-transition-appear-done {
-  transform: translateX(0%);
-  transition: transform 500ms linear;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 .weather-transition-appear-exit {
-  transform: translateX(0%);
-  transition: opacity 300ms linear;
-  transition: transform 500ms linear;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 .weather-transition-appear-exit-done {
-  transform: translateX(-110%);
+  transform: scale(0);
 }
 
 .weather-transition-enter {
-  transform: translateX(-110%);
+  transform: scale(0);
 }
 .weather-transition-enter-done {
-  transform: translateX(0%);
-  transition: transform 500ms linear;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 .weather-transition-exit {
-  transform: translateX(0%);
-  transition: transform 500ms linear;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 .weather-transition-exit-done {
-  transform: translateX(-110%);
+  transform: scale(0);
 }
+
+
+
 
 
 .weather__component {
@@ -393,6 +431,9 @@ main {
   align-items: center;
   justify-content: space-between;
 
+  opacity: 1;
+
+  transition: opacity 0.3s;
   transition: transform 0.3s;
 }
 

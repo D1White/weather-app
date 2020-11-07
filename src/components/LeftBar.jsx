@@ -1,12 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import home from "../assets/img/home.svg";
-
 /* Weather IMG */
 import cloudy from "../assets/img/cloudy.svg";
 import radioFilled from "../assets/img/radio_filled.svg";
 
+import { LeftBarHeader } from "./";
 import { weatherImg } from '../utils/weatherImg';
 
 const dayOfWeekArr = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -40,16 +39,7 @@ function LeftBar() {
     <div className="left-bar">
       {weatherLoad && (
         <div className="left-bar__container">
-          <div className="left-bar__header">
-            <input
-              type="text"
-              className="left-bar__header-search"
-              placeholder="search for places ..."
-            />
-            <button className="left-bar__header-button">
-              <img src={home} alt="home" />
-            </button>
-          </div>
+          <LeftBarHeader />
 
           <img src={weatherImg(weather.current.weather[0].id)} alt="weather now" className="left-bar__img" />
 

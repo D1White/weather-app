@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { UnitsEllipse, WeatherBlock } from "./";
-import { CSSTransition } from "react-transition-group";
 
 const rightBarHeader = ["Today", "Week"];
 
@@ -9,11 +8,6 @@ function RightBarWeather() {
   const weather = useSelector(({ weather }) => weather.weather);
   const weatherLoad = useSelector(({ weather }) => weather.isLoaded);
   const [activeDateUnit, setActiveDateUnit] = useState("Week");
-  const [transition, setTransition] = useState(false);
-
-  useEffect(() => {
-      setTransition(true);
-  }, [activeDateUnit]);
 
   return (
     <div>
@@ -25,10 +19,7 @@ function RightBarWeather() {
                 className={`interval__text ${
                   obj === activeDateUnit ? "active" : ""
                 }`}
-                onClick={() => {
-                  setActiveDateUnit(obj);
-                  setTransition(false);
-                }}
+                onClick={() => setActiveDateUnit(obj)}
                 key={`${obj}_${index}`}
               >
                 {obj}
@@ -40,15 +31,6 @@ function RightBarWeather() {
           <UnitsEllipse unit="F" />
         </div>
       </div>
-      <CSSTransition
-        in={transition}
-        appear={true}
-        timeout={0}  
-        onExit={() => console.log('onExit')}
-        onExiting={() => console.log('onExiting')}
-        onExited={() => console.log('onExited')}
-        classNames={'weather-transition'}
-      >
       <div className="right-bar__weather">
        {activeDateUnit === "Week" &&
           weatherLoad &&
@@ -81,7 +63,6 @@ function RightBarWeather() {
             );
           })}
       </div>
-       </CSSTransition>
     </div>
   );
 }
