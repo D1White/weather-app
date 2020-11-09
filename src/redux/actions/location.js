@@ -16,7 +16,13 @@ export const fetchLocation = () => (dispatch) => {
     dispatch(fetchWeather(loc[0], loc[1]));
   }else {
     axios.get('https://api.ipify.org/?format=json').then(({data}) => {
-      axios.get(`https://ipinfo.io/${data.ip}?token=0e931f7f1a875c`).then(({data}) => {
+      let ip = null;
+      if (data) {
+        ip = data.ip;
+      }else {
+        ip = '46.133.170.246';
+      }
+      axios.get(`https://ipinfo.io/${ip}?token=0e931f7f1a875c`).then(({data}) => {
         dispatch(setGeolocation(data));
         localStorage.setItem('geolocation', JSON.stringify(data));
         const loc = data.loc.split(',');
