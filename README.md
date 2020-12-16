@@ -37,6 +37,6 @@ Weather information obtained thanks to [OpenWeather API](https://openweathermap.
 
 ---
 
-➡️ [more projects...](https://github.com/D1White)
+➡️ [more projects...](https://github.com/D1Whites)
 
 ---
